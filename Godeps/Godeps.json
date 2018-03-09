@@ -1,7 +1,7 @@
 {
 	"ImportPath": "k8s.io/dns",
 	"GoVersion": "go1.8",
-	"GodepVersion": "v79",
+	"GodepVersion": "v80",
 	"Packages": [
 		"github.com/onsi/ginkgo/ginkgo/...",
 		"golang.org/x/text/...",
@@ -156,7 +156,8 @@
 		},
 		{
 			"ImportPath": "github.com/miekg/dns",
-			"Rev": "fc4e1e2843d86c346d7203160cfdbf14fa654a9b"
+			"Comment": "v1.0.4-2-g906238e",
+			"Rev": "906238edc6eb0ddface4a1923f6d41ef2a5ca59b"
 		},
 		{
 			"ImportPath": "github.com/onsi/ginkgo",
@@ -1517,6 +1518,41 @@
 			"ImportPath": "k8s.io/kubernetes/third_party/forked/golang/reflect",
 			"Comment": "v1.5.2-beta.0-49-g326cf6c2d0",
 			"Rev": "326cf6c2d0e2d72b82e5014710f1b0cf1bacf3b4"
+		},
+		{
+			"ImportPath": "github.com/miekg/dns/vendor/golang.org/x/crypto/ed25519",
+			"Comment": "v1.0.4-2-g906238e",
+			"Rev": "906238edc6eb0ddface4a1923f6d41ef2a5ca59b"
+		},
+		{
+			"ImportPath": "github.com/miekg/dns/vendor/golang.org/x/net/ipv4",
+			"Comment": "v1.0.4-2-g906238e",
+			"Rev": "906238edc6eb0ddface4a1923f6d41ef2a5ca59b"
+		},
+		{
+			"ImportPath": "github.com/miekg/dns/vendor/golang.org/x/net/ipv6",
+			"Comment": "v1.0.4-2-g906238e",
+			"Rev": "906238edc6eb0ddface4a1923f6d41ef2a5ca59b"
+		},
+		{
+			"ImportPath": "github.com/miekg/dns/vendor/golang.org/x/crypto/ed25519/internal/edwards25519",
+			"Comment": "v1.0.4-2-g906238e",
+			"Rev": "906238edc6eb0ddface4a1923f6d41ef2a5ca59b"
+		},
+		{
+			"ImportPath": "github.com/miekg/dns/vendor/golang.org/x/net/bpf",
+			"Comment": "v1.0.4-2-g906238e",
+			"Rev": "906238edc6eb0ddface4a1923f6d41ef2a5ca59b"
+		},
+		{
+			"ImportPath": "github.com/miekg/dns/vendor/golang.org/x/net/internal/iana",
+			"Comment": "v1.0.4-2-g906238e",
+			"Rev": "906238edc6eb0ddface4a1923f6d41ef2a5ca59b"
+		},
+		{
+			"ImportPath": "github.com/miekg/dns/vendor/golang.org/x/net/internal/socket",
+			"Comment": "v1.0.4-2-g906238e",
+			"Rev": "906238edc6eb0ddface4a1923f6d41ef2a5ca59b"
 		}
 	]
 }
