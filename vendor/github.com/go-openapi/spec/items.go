@@ -28,6 +28,7 @@ type SimpleSchema struct {
 	Items            *Items      `json:"items,omitempty"`
 	CollectionFormat string      `json:"collectionFormat,omitempty"`
 	Default          interface{} `json:"default,omitempty"`
+	Example          interface{} `json:"example,omitempty"`
 }
 
 func (s *SimpleSchema) TypeName() string {
@@ -62,11 +63,12 @@ type CommonValidations struct {
 // Items a limited subset of JSON-Schema's items object.
 // It is used by parameter definitions that are not located in "body".
 //
-// For more information: http://goo.gl/8us55a#items-object-
+// For more information: http://goo.gl/8us55a#items-object
 type Items struct {
 	Refable
 	CommonValidations
 	SimpleSchema
+	VendorExtensible
 }
 
 // NewItems creates a new instance of items
@@ -177,9 +179,14 @@ func (i *Items) UnmarshalJSON(data []byte) error {
 	if err := json.Unmarshal(data, &simpleSchema); err != nil {
 		return err
 	}
+	var vendorExtensible VendorExtensible
+	if err := json.Unmarshal(data, &vendorExtensible); err != nil {
+		return err
+	}
 	i.Refable = ref
 	i.CommonValidations = validations
 	i.SimpleSchema = simpleSchema
+	i.VendorExtensible = vendorExtensible
 	return nil
 }
 
@@ -197,7 +204,11 @@ func (i Items) MarshalJSON() ([]byte, error) {
 	if err != nil {
 		return nil, err
 	}
-	return swag.ConcatJSON(b3, b1, b2), nil
+	b4, err := json.Marshal(i.VendorExtensible)
+	if err != nil {
+		return nil, err
+	}
+	return swag.ConcatJSON(b4, b3, b1, b2), nil
 }
 
 // JSONLookup look up a value by the json property name
